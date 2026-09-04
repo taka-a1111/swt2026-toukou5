@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- BUILD_TAG: swt2026_toukou5_ver1.0 / 2026-09-04 -->
+<!-- BUILD_TAG: swt2026_toukou5_ver1.1 / 2026-09-04 -->
 <html lang="ja">
 <head>
 <meta charset="utf-8">
@@ -486,23 +486,6 @@ dl.info dd{margin:2px 0 0;word-break:break-word;}
 .biz{font-size:13.5px;color:var(--gray);margin-top:16px;}
 .biz a{word-break:break-all;}
 
-/* ============ 追従バー ============ */
-.sticky-cta{
-  position:fixed;left:0;right:0;bottom:0;z-index:90;
-  background:rgba(0,48,95,.97);padding:9px 12px;
-  display:flex;gap:8px;justify-content:center;
-  box-shadow:0 -3px 12px rgba(0,0,0,.22);
-}
-.sticky-cta button{
-  flex:1 1 0;max-width:230px;min-height:46px;border:0;border-radius:7px;cursor:pointer;
-  font-family:inherit;font-size:14.5px;font-weight:900;color:#fff;line-height:1.3;
-}
-.sticky-cta .s1{background:var(--accent);}
-.sticky-cta .s2{background:var(--red);}
-.sticky-cta .s3{background:#fff;color:var(--navy);}
-body{padding-bottom:70px;}
-@media (max-width:480px){ .sticky-cta button{font-size:13px;} }
-
 footer{background:var(--navy-d);color:#fff;padding:22px 0;font-size:13px;text-align:center;}
 footer a{color:#cfe3f7;}
 
@@ -828,8 +811,6 @@ table.tbl th{background:var(--wash);font-weight:800;}
 /* --- ボタン --------------------------------------------------- */
 .btn{border-radius:4px;letter-spacing:.04em;box-shadow:none;}
 .btn small{letter-spacing:.02em;opacity:.86;}
-.sticky-cta{border-top:1px solid rgba(255,255,255,.16);}
-.sticky-cta button{border-radius:4px;letter-spacing:.06em;}
 
 /* --- ヘッダー・フッター --------------------------------------- */
 header{box-shadow:none;border-bottom:1px solid var(--rule);}
@@ -904,7 +885,15 @@ footer{border-top:0;}
 
 <style>
 .doc-btns{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0 0}
-.doc-btns .btn-doc{flex:1 1 220px;min-height:56px;font-size:16px}
+.doc-btns .btn-doc{
+  flex:1 1 220px;min-height:60px;border:0;border-radius:8px;cursor:pointer;
+  font-family:inherit;font-size:16px;font-weight:900;line-height:1.4;color:#fff;
+  padding:12px 14px;box-shadow:0 2px 6px rgba(0,0,0,.16);
+}
+.doc-btns .b1{background:var(--accent);}
+.doc-btns .b2{background:#fff;color:var(--navy);border:2px solid var(--navy);}
+.doc-btns .b3{background:var(--red);}
+@media (max-width:480px){ .doc-btns .btn-doc{font-size:15px;} }
 .lead{font-size:15px;line-height:1.9;margin:0}
 .sec-ttl{margin:0 0 12px}
 </style>
@@ -923,9 +912,9 @@ footer{border-top:0;}
     <h2 class="sec-ttl">論文投稿システム　会計書類</h2>
     <p class="lead">基本見積書・最適見積書・仕様書・発注書・請書の３点です。<br>ボタンを押すと画面上で作成し、印刷できます。</p>
     <div class="doc-btns">
-      <button class="btn btn-doc" data-open="m-basic">基本見積書</button>
-      <button class="btn btn-doc" data-open="m-ref">最適見積書</button>
-      <button class="btn btn-doc" data-open="m-order">仕様書・発注書・請書</button>
+      <button class="btn-doc b1" data-open="m-basic">基本見積書</button>
+      <button class="btn-doc b2" data-open="m-ref">最適見積書</button>
+      <button class="btn-doc b3" data-open="m-order">仕様書・発注書・請書</button>
     </div>
   </div>
 </section>
@@ -939,12 +928,6 @@ footer{border-top:0;}
     <p class="ft-copy">＠SWT　Science Web Coop.</p>
   </div>
 </footer>
-
-<div class="sticky-cta no-print" role="navigation" aria-label="書類の作成">
-  <button class="s1" data-open="m-basic">基本見積書</button>
-  <button class="s3" data-open="m-ref">最適見積書</button>
-  <button class="s2" data-open="m-order">発注書</button>
-</div>
 
 <!-- ============ モーダル：基本見積書 ============ -->
 <div class="modal" id="m-basic">
