@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- BUILD_TAG: swt2026_toukou5_ver1.1 / 2026-09-04 -->
+<!-- BUILD_TAG: swt2026_toukou5_ver2.0 / 2026-09-07 -->
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>論文投稿システム　会計書類｜サイエンスウェブ株式会社　ＳＷＴ</title>
-<meta name="description" content="学会・国際会議の開催案内ホームページ、演題登録・参加登録フォーム、カード決済をまとめて。プレミアムプラン基本40万円、入稿完了から３週間で公開。基本見積書・最適見積書・発注書をその場で作成できます。">
+<meta name="description" content="論文投稿システム　ベーシックプランの会計書類。基本見積書・最適見積書・仕様書・発注書・請書を画面上で作成し、プリントも保存もできます。">
 <meta name="keywords" content="学会 ホームページ制作,国際会議 ウェブサイト,演題登録フォーム,参加登録フォーム,学会 カード決済,大会 開催案内,学術大会 サイト制作">
 <meta name="author" content="サイエンスウェブ株式会社">
 <meta name="robots" content="index, follow">
@@ -16,9 +16,9 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="サイエンスウェブ株式会社">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="学会・国際会議の開催案内Webサイト｜プレミアムプラン基本40万円">
-<meta property="og:description" content="開催案内ホームページ10画面、演題登録フォーム、参加登録フォーム、カード決済をまとめて。入稿完了から３週間で公開。見積書はその場で作成・印刷できます。">
-<meta property="og:url" content="https://science-web.online/40venue/">
+<meta property="og:title" content="論文投稿システム　会計書類｜サイエンスウェブ株式会社　ＳＷＴ">
+<meta property="og:description" content="論文投稿システム　ベーシックプランの会計書類。基本見積書・最適見積書・仕様書・発注書・請書を画面上で作成し、プリントも保存もできます。">
+<meta property="og:url" content="https://swt2026-toukou5.vercel.app/">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- 構造化データ：検索結果でサービス内容と価格を認識させる -->
@@ -910,7 +910,7 @@ footer{border-top:0;}
 <section class="sec" id="docs">
   <div class="wrap">
     <h2 class="sec-ttl">論文投稿システム　会計書類</h2>
-    <p class="lead">基本見積書・最適見積書・仕様書・発注書・請書の３点です。<br>ボタンを押すと画面上で作成し、印刷できます。</p>
+    <p class="lead">基本見積書・最適見積書・仕様書・発注書・請書の３点から選択してください。<br>ボタンを押すと画面上にて書類を作成できます。プリントも保存も可能です。</p>
     <div class="doc-btns">
       <button class="btn-doc b1" data-open="m-basic">基本見積書</button>
       <button class="btn-doc b2" data-open="m-ref">最適見積書</button>
@@ -1117,7 +1117,7 @@ var NOTE_OPT = [
   "画面プリントして「資料」保存を願います。",
   "メールとZoomヒアリングにて、詳細なご相談いたします。",
   "追加ご相談は、メール・Zoomヒアリングにてお受けします。",
-  "本見積はパック商品の基本金額です。"
+  "本見積はパック商品の基本金額に希望項目を追加した金額です。"
 ];
 /* 最適見積書：６番の下に入る細目 */
 var NOTE_OPT_SUB = [
@@ -1279,7 +1279,7 @@ function notIncludedList(){
 /* 発注書の各ページ共通で入る注意書き（原稿どおり） */
 function orderNote(){
   return '<ul class="doc-note-sub doc-order-note">'
-       + '<li class="no-mark">この発注書は、パック商品の金額です</li>'
+       + '<li class="no-mark">この発注書は、パック商品の金額に希望項目を追加した金額です。</li>'
        + '<li>有効期限　発行日より30日間　　　相互の事情により改訂されます。</li>'
        + '<li>納期　　　入稿完了から３週間以内に公開。</li>'
        + '</ul>';
@@ -1509,7 +1509,7 @@ $("od-next").addEventListener("click", function(){
     + '<div class="doc-sec-ttl">納期</div>'
     + '<p>入稿完了から３週間以内に公開いたします。</p>'
     + '<div class="doc-sec-ttl">パック商品に含まれないもの</div>'
-    + '<p>消費税10％は別途申し受けます。下記４項目は、パック商品に含まれておりません。</p>'
+    + '<p>連絡調整費（※制作費の10％）、消費税（※小計（税抜）の10％）は別途申し受けます。下記４項目は、パック商品に含まれておりません。</p>'
     + notIncludedList()
     + orderNote()
     + '<div class="doc-sec-ttl">保守管理の業務</div>'
@@ -1576,7 +1576,7 @@ $("od-send").addEventListener("click", function(){
     method: "POST",
     headers: {"Content-Type":"text/plain;charset=utf-8"}, // Apps Script側の制約でtext/plainで送る
     body: JSON.stringify({
-      product: "ＳＷＯ２０２６ＬＰ改訂40万円",
+      product: "ＳＷＴ２０２６論文投稿5万3点書類",
       docNo: no,
       org: org,
       name: nm,
